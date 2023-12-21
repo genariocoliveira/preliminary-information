@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/main.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <main class="bg-[#ebe9e9] min-h-screen flex justify-center items-center">
+        <div class="container mx-auto">
+
+            <div class="w-full flex justify-center items-center">
+
+                <form action="#"
+                    class="bg-[#f6f0ed] px-6 py-10 rounded-md w-[600px] shadow-lg font-semibold text-[#3581bb] mt-8">
+
+                    <div class="grid sm:grid-cols-2  gap-4">
+                        <label for="inMotoristaMecanico">Motorista / Mecânico<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="text" name="" id="inMotoristaMecanico"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-[#3581bb] focus:ring-1 focus:ring-[#3581bb]"
+                                placeholder="Quem esta socorrendo?" autofocus>
+                        </label>
+                        <label for="inCarroSos">Carro SOS<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="text" name="" id="inCarroSos"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                                placeholder="Digite o número do carro" maxlength="4">
+                        </label>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2  gap-4 mt-3">
+                        <label for="inCarroDefeito">Carro com defeito<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="text" name="" id="inCarroDefeito"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-[#3581bb] focus:ring-1 focus:ring-[#3581bb]"
+                                placeholder="Qual carro esta com defeito?">
+                        </label>
+                        <label for="inHorarioCarro">Horário do carro<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="search" id="inHorarioCarro"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                                placeholder="00:00" maxlength="5" onkeyup="MascaraHoraCarro()">
+                        </label>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2  gap-4 mt-3">
+                        <label for="inLinha">Linha<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="text" name="" id="inLinha"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-[#3581bb] focus:ring-1 focus:ring-[#3581bb]"
+                                placeholder="Digite a linha">
+                        </label>
+                        <label for="inMotorista">Motorista<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="text" name="" id="inMotorista"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                                placeholder="Digite o nome do motorista">
+                        </label>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2  gap-4 mt-3">
+                        <label for="inDataViagem">Data da viagem<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="search" name="" id="inDataViagem"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-[#3581bb] focus:ring-1 focus:ring-[#3581bb]"
+                                placeholder="00/00/0000" onkeyup="DataViagem()" maxlength="10">
+                        </label>
+                        <label for="inLocalSos">Local do Socorro<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="text" name="" id="inLocalSos"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                                placeholder="Digite o local do SOS">
+                        </label>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2  gap-4 mt-3">
+                        <label for="inHorarioSaida">Horário da saída<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="search" name="" id="inHorarioSaida"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-[#3581bb] focus:ring-1 focus:ring-[#3581bb]"
+                                placeholder="00:00" onkeyup="HoraSaida()" maxlength="5">
+                        </label>
+                        <label for="inSoube">Como soube deste SOS<span class="text-rose-900 text-[1rem]">*</span>
+                            <input type="text" name="" id="inSoube"
+                                class="block w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-300 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500"
+                                placeholder="Motorista ou Sigla?">
+                        </label>
+                    </div>
+
+
+
+                    <div class="grid gap-4 mt-3">
+                        <label for="inMotivo">Digite o motivo do SOS<span class="text-rose-900 text-[1rem]">*</span>
+                            <textarea name="" id="inMotivo" cols="0" class="w-full px-3 py-2 border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                        focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500" rows="0"
+                                placeholder="Digite o motivo do Socorro" required></textarea>
+                        </label>
+                    </div>
+
+
+                    <div class="grid gap-4 mt-3">
+                        <input type="submit" value="GERAR TEXTO"
+                            class="bg-[#FCB07E] w-full py-3 rounded-md hover:bg-[#EE8F50] duration-300">
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="flex justify-center items-center">
+                <div class="px-6 py-10 rounded-md w-[600px] font-semibold text-[#3581bb] mt-4">
+                    <p id="inResposta">
+                        
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>
