@@ -20,7 +20,7 @@ frm.addEventListener('submit', (e) => {
         alert('Informe todos os campos obrigatórios.')
     }
 
-    resp.innerText = `SOS em andamento, informações preliminares. O ${inMecanico} está saindo no carro ${inSos} para prestar socorro ao veículo ${inCarDefeito}, que está cumprindo o horário de ${inHorarioCar}, ${linha}.
+    resp.innerText = `SOS em andamento, informações preliminares. O ${inMecanico} saíram/saiu no carro ${inSos} para socorrer o carro ${inCarDefeito}, que está cumprindo o horário de ${inHorarioCar}, ${linha}.
 
     - Motorista: ${motorista}
     - Data da viagem: ${dataViagem}
